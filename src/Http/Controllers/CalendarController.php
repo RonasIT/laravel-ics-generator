@@ -23,8 +23,11 @@ class CalendarController extends Controller
             ->setDateEnd(new DateTime($request->input('to')))
             ->setDescription($request->input('description'))
             ->setSummary($request->input('name'))
-            ->setOrganizer($request->input('contact_email'))
             ->setFilename(uniqid());
+
+        if (!empty($request->input('contact_email'))) {
+            $ical->setOrganizer($request->input('contact_email'));
+        }
 
         return response($ical->getICAL(), Response::HTTP_OK, [
             'Content-type' => 'text/calendar; charset=utf-8',

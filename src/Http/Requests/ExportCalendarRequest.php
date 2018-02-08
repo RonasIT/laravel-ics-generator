@@ -29,7 +29,7 @@ class ExportCalendarRequest extends FormRequest
             'to' => 'date_format:Y-m-d H:i:s|required',
             'description' => 'string|required',
             'name' => 'string|required',
-            'contact_email' => 'string|email|required'
+            'contact_email' => 'string|email|nullable'
         ];
     }
 }
