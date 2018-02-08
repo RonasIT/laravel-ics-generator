@@ -1,0 +1,23 @@
+{
+  "name": "ronasit/laravel-ics-generator",
+  "description": "This package developed for easy integration of ics-file generating.",
+  "keywords": ["laravel", "ics", "ical", "outlook"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roman Dubrovin",
+      "email": "rdubrovin@ronasit.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "laravel/framework": ">=5.2.0",
+    "calendar/icsfile": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "RonasIT\\Support\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
