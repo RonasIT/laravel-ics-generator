@@ -19,8 +19,8 @@ class CalendarController extends Controller
     public function export(ExportCalendarRequest $request) {
         $ical = (new Ical())
             ->setAddress($request->input('address'))
-            ->setDateStart(new DateTime($request->input('from')))
-            ->setDateEnd(new DateTime($request->input('to')))
+            ->setDateStart(new \DateTime($request->input('from')))
+            ->setDateEnd(new \DateTime($request->input('to')))
             ->setDescription($request->input('description'))
             ->setSummary($request->input('name'))
             ->setOrganizer($request->input('contact_email'))
