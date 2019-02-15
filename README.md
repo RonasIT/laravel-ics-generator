@@ -29,3 +29,35 @@ php artisan vendor:publish
 * name - string, required
 * contact_email - string, email, required
  
+# How to Use
+
+After Steps for integration 
+run http server
+```
+php artisan serve
+```
+make request
+```
+curl -XGET 'http://localhost:8000/export/calendar?name=Hello+World&from=2019-10-10+10%3A10%3A10&to=2019-10-10+11%3A11%3A11&address=Somewhere+In+Siberia&contact_email=rdubrovin@ronasit.com&description=Test+Message'
+```
+
+Result should be
+
+```
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:
+CALSCALE:GREGORIAN 
+BEGIN:VEVENT
+DTSTART:20191010T101010Z
+DTEND:20191010T111111Z
+SUMMARY:Hello World
+UID:5c66585042c66
+ORGANIZER:MAILTO:rdubrovin@ronasit.com
+LOCATION: Somewhere In Siberia
+DESCRIPTION:Test Message
+END:VEVENT
+END:VCALENDAR
+```
+
+Now you can use is through request from client to upload ICS-calendar events as you want.
